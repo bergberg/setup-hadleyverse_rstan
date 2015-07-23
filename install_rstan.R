@@ -1,0 +1,5 @@
+dotR <- file.path(Sys.getenv("HOME"), ".R")
+if (!dir.exists(dotR)) dir.create(dotR)
+M <- file.path(dotR, "Makevars")
+if (!file.exists(M)) file.create(M)
+cat("\nCXXFLAGS=-O3", file = M, sep = "\n", append = TRUE)
